@@ -1,0 +1,18 @@
+{
+  "name": "wordlearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "rob-wess",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "electron": "^11.5.0"
+  },
+  "dependencies": {
+    "google-tts-api": "^2.0.2"
+  }
+}
