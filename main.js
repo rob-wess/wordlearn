@@ -17,7 +17,7 @@ function createWindow (width, height) {
 
   win.loadFile('src/index.html')
   win.show()
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
   win.setMenu(null)
 
   win.on('close', function() { //   <---- Catch close event

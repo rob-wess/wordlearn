@@ -27,7 +27,9 @@ for (let i=0; i<colors.length; i++) {
 
                     // save the audio file
                     const buffer = Buffer.from(base64, 'base64');
-                    fs.writeFileSync(colorName +'.mp3', buffer, { encoding: 'base64' });
+		    var audioPath = path.join(__dirname, 'audio');
+		    var audioFile = path.join(audioPath, colorName + '.mp3');
+                    fs.writeFileSync(audioFile, buffer, { encoding: 'base64' });
                 })
                 .catch(console.error);
 
