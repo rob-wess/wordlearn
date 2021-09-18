@@ -1,5 +1,5 @@
 # Audio downloads
-/src/audio/*
+/src/audio/*.mp3
 
 # Logs
 logs
