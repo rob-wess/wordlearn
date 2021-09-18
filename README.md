@@ -11,7 +11,7 @@ The current project only supports linux. This can be changd if the shell command
 ## Install and Run
 ```shell
 git clone
-cd wordleran
+cd wordlear
 npm i
 cd src
 node download-audio.js
