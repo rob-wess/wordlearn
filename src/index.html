@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+<head id='head-tag'>
+  <title>Desktron</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- <body style="-webkit-app-region: drag; border-radius: 5px">
+<body> -->
+
+<body>
+
+  <div class="titlebar"></div>
+
+  <div class="wrapper">
+    <h1 id="main_color_text"></h1>
+  </div>
+</body>
+
+<script>
+
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function changeColors(colorName, bgColor, fontColor ) {
+
+  var { exec } = require("child_process");
+
+  var wrapper = document.getElementsByClassName('wrapper')[0];
+  var text = document.getElementById('main_color_text');
+  var path = require('path');
+  var audioPath = path.join(__dirname, 'audio');
+
+  var audioFile = path.join(audioPath, colorName + '.mp3');
+  console.log(audioFile);
+  
+
+  wrapper.style.backgroundColor = bgColor;
+  text.style.color = fontColor;
+  text.textContent = colorName;
+
+  exec("mpg123 " + audioFile, () => {});
+
+
+  // console.log('bgColor: ' + bgColor);
+  // console.log('font Color: ' + fontColor);
+  // console.log('text Content: ' + colorName);
+
+
+}
+
+window.onload = function() {
+
+  var fs = require('fs');
+  var path = require('path');
+  var colorFile = path.join(__dirname, 'colors.json');
+  var rawdata = fs.readFileSync(colorFile);
+  var colors = JSON.parse(rawdata).colors;
+  var wrapper = document.getElementsByClassName('wrapper')[0];
+  var text = document.getElementById('main_color_text');
+  var colorLength = colors.length;
+  
+  let rndInt = randomIntFromInterval(0, colorLength);
+
+  for (k in colors[rndInt]) {
+
+    if(colors[rndInt][k] instanceof Object) {
+            let colorName = (colors[rndInt][k].colorName);
+            let backgroundColor = (colors[rndInt][k].backgroundColor);
+            let textColor = (colors[rndInt][k].textColor);
+            changeColors(colorName, backgroundColor, textColor);
+        }
+    }
+  }
+
+  // console.log(colorName);
+document.getElementsByClassName('wrapper')[0].addEventListener('click', function() {
+
+  var fs = require('fs');
+  var path = require('path');
+  var colorFile = path.join(__dirname, 'colors.json');
+  var rawdata = fs.readFileSync(colorFile);
+  var colors = JSON.parse(rawdata).colors;
+  var wrapper = document.getElementsByClassName('wrapper')[0];
+  var text = document.getElementById('main_color_text');
+  var colorLength = colors.length;
+
+  let rndInt = randomIntFromInterval(0, colorLength);
+  for (k in colors[rndInt]) {
+    if(colors[rndInt][k] instanceof Object) {
+            let colorName = (colors[rndInt][k].colorName);
+            let backgroundColor = (colors[rndInt][k].backgroundColor);
+            let textColor = (colors[rndInt][k].textColor);
+            changeColors(colorName, backgroundColor, textColor);
+        }
+    }
+
+});
+</script>
+
+
+</html>

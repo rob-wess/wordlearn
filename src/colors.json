@@ -1,0 +1,19 @@
+{"colors":
+    [
+        {"Blue":{"colorName": "Blue", "backgroundColor":"#276FBF","textColor":"#183059"}},
+        {"Orange":{"colorName": "Orange", "backgroundColor":"rgb(255, 136, 67)","textColor":"rgb(231, 87, 3)"}},
+        {"Yellow":{"colorName": "Yellow", "backgroundColor":"rgb(255, 255, 152)","textColor":"rgb(228, 205, 4)"}},
+        {"Red":{"colorName": "Red", "backgroundColor":"rgb(240, 65, 22)","textColor":"rgb(194, 39, 1)"}},
+        
+        
+        {"Purple":{"colorName": "Purple", "backgroundColor":"rgb(255, 107, 255)","textColor":"rgb(95, 0, 95)"}},
+        {"Green":{"colorName": "Green", "backgroundColor":"rgb(54, 218, 54)","textColor":"rgb(4, 133, 4)"}},
+        {"Pink":{"colorName": "Pink", "backgroundColor":"rgb(255, 192, 203)","textColor":"rgb(248, 43, 77)"}},
+        {"Black":{"colorName": "Black", "backgroundColor":"rgb(0, 0, 0)","textColor":"rgb(255,255,255)"}},
+        {"Brown":{"colorName": "Brown", "backgroundColor":"#d18538","textColor":"#964B00"}}
+
+        
+
+    
+    ]
+}
